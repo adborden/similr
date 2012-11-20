@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS Article;
+CREATE TABLE Article (
+    id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+    created TIMESTAMP NOT NULL,
+    source TEXT UNIQUE NOT NULL,
+    author TEXT NULL,
+    publisher TEXT NULL,
+    published TIMESTAMP NULL,
+    posted_by TEXT NULL,
+    posted TIMESTAMP NULL
+    );
+
+DROP TABLE IF EXISTS Vector;
+CREATE TABLE Vector (
+    id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+    created TIMESTAMP NOT NULL,
+    article_id INTEGER REFERENCES Article (id),
+    word TEXT NOT NULL,
+    count INTEGER NOT NULL
+    );

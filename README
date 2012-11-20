@@ -1,0 +1,34 @@
+Stores metadata on articles. When articles are given to the system, the system determines how /similar/ it is compared to all the other articles seen.
+
+This involves, parsing/tokenizing the article. Comparing the article to existing articles by
+* Source (url)
+* -Publish date-
+* Article content
+
+DB
+add(article)
+compare(article, threshold)
+
+Tokenizer
+next()
+
+
+Data
+Article
+- id
+- word_vector
+- source
+- author
+- publisher
+- publish_date
+- posted
+- posted_by
+- created
+
+Vector
+- id
+- article_id
+- word
+- count
+
+
